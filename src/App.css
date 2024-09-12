@@ -1,38 +1,100 @@
-.App {
+.img-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.img-container img{
+  transform: translateY(-10%)
+}
+
+.image-title {
+  position: absolute;
+  bottom: 0; /* Menempel di bawah gambar */
+  left: 0;
+  right:0;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+  color: white; /* Warna teks putih */
+  padding: 10px;
   text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image-year {
+  position: absolute;
+  top: 0; /* Menempel di bawah gambar */
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+  color: white; /* Warna teks putih */
+  padding: 10px;
+  text-align: left;
+  font-size: 0.8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styling untuk tombol Watch */
+.watch-btn{
+  position: absolute;
+  bottom: 30%;  /* Menempatkan tombol di bagian bawah gambar */
+  left: 30%;
+  transform: translateX(-50%);  /* Pusatkan tombol secara horizontal */
+  z-index: 10;  /* Pastikan tombol berada di atas gambar */
+  opacity: 0;   /* Awalnya disembunyikan */
+  transition: opacity 0.3s ease;  /* Transisi halus */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.details-btn{
+  position: absolute;
+  bottom: 30%;  /* Menempatkan tombol di bagian bawah gambar */
+  left: 70%;
+  transform: translateX(-50%);  /* Pusatkan tombol secara horizontal */
+  z-index: 10;  /* Pastikan tombol berada di atas gambar */
+  opacity: 0!important;   /* Awalnya disembunyikan */
+  transition: opacity 0.3s ease;  /* Transisi halus */
+}
+
+/* Tampilkan tombol saat gambar di-hover */
+.img-container:hover .watch-btn {
+  opacity: 1;
+}
+
+.img-container:hover .details-btn {
+  opacity: 1!important;
+}
+
+.img-container:hover .image-title {
+  bottom:45%;
+  font-size: 1.5rem;
+}
+
+.img-container:hover .img-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1.2); /* Gambar membesar saat di-hover */
+}
+
+.img-container:hover img {
+  transform: scale(1.2); /* Gambar membesar saat di-hover */
+}
+
+.pagination .page-link {
+  background: #dc3545;
   color: white;
+  border: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.page-item.active .page-link{
+  background: white!important;
+  color:black!important;
+  border:0px!important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-item.disabled .page-link{
+  background: white!important;
+  color:black!important;
+  border:0px!important;
+}
+
+body{
+  height: 100%;
 }
