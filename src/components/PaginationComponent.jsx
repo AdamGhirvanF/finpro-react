@@ -1,13 +1,13 @@
 import { Link, Outlet, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react";
 
 export default function PaginationComponent(){
-    let page = useParams();
+    let {page} = useSelector((state) => state);
 
     useEffect(() => {
 
-    }, [page.page]);
+    }, [page]);
     
     const dispatch = useDispatch();
     
@@ -18,7 +18,7 @@ export default function PaginationComponent(){
         });
     }
     
-    const index = parseInt(page.page);
+    const index = parseInt(page);
     
     return(
         <>

@@ -10,8 +10,9 @@ function App() {
       <NavbarComponent/>
     </header>
     <body className='bg-dark'>
-      <div className='container'>
+      <div className='container-fluid p-4'>
         <Routes>
+          <Route path="/" element={<AllMovie/>}/>
           <Route path="/:page" element={<AllMovie/>}/>
           <Route path='/detail-movie/:id' element={<DetailMovieComponent/>}/>
         </Routes>

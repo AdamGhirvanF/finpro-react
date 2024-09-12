@@ -33,27 +33,6 @@
   font-size: 0.8rem;
 }
 
-/* Styling untuk tombol Watch */
-.watch-btn{
-  position: absolute;
-  bottom: 30%;  /* Menempatkan tombol di bagian bawah gambar */
-  left: 30%;
-  transform: translateX(-50%);  /* Pusatkan tombol secara horizontal */
-  z-index: 10;  /* Pastikan tombol berada di atas gambar */
-  opacity: 0;   /* Awalnya disembunyikan */
-  transition: opacity 0.3s ease;  /* Transisi halus */
-}
-
-.details-btn{
-  position: absolute;
-  bottom: 30%;  /* Menempatkan tombol di bagian bawah gambar */
-  left: 70%;
-  transform: translateX(-50%);  /* Pusatkan tombol secara horizontal */
-  z-index: 10;  /* Pastikan tombol berada di atas gambar */
-  opacity: 0!important;   /* Awalnya disembunyikan */
-  transition: opacity 0.3s ease;  /* Transisi halus */
-}
-
 /* Tampilkan tombol saat gambar di-hover */
 .img-container:hover .watch-btn {
   opacity: 1;
@@ -64,7 +43,7 @@
 }
 
 .img-container:hover .image-title {
-  bottom:45%;
+  bottom:30%;
   font-size: 1.5rem;
 }
 
@@ -75,6 +54,7 @@
 
 .img-container:hover img {
   transform: scale(1.2); /* Gambar membesar saat di-hover */
+  transform: translateY(-55%)
 }
 
 .pagination .page-link {

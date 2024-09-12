@@ -1,16 +1,25 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { getData, movePage, searchMovie } from "../movies/action";
+
 
 export default function NavbarComponent(){
-  let page = useParams();
   const dispatch = useDispatch();
     
   const movePage = () => {
       dispatch({
           type: "MOVE_PAGE",
-          payload: page.page
+          payload: 1
       });
+  }
+
+  const searchNewMovie = (el) => {
+    dispatch({
+      type: "SEARCH_MOVIE",
+      payload: el.target.value
+  });
+  dispatch(getData(1));
   }
     return(
       <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-danger shadow-lg">
@@ -22,10 +31,10 @@ export default function NavbarComponent(){
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <Link class="nav-link active" aria-current="page" onClick={movePage} to="/1">Home</Link>
+                <Link class="nav-link active" aria-current="page" onClick={() => movePage()} to="/1">Home</Link>
               </li>
               <li>
-                <input type="text" className="form-control" name="" placeholder="Search movie..." id="" />
+                <input type="text" className="form-control" name="" onBlur={(el) => searchNewMovie(el)} placeholder="Search movie..." id="" />
               </li>
             </ul>
           </div>
