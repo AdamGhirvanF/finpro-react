@@ -6,7 +6,7 @@ export default function CardComponent(movie){
     return(
         <>
             <div className="row">
-                {movie.movie.length >= 0 && movie.movie.map(function(data) {
+                {movie.movie.length > 0 ? movie.movie.map(function(data) {
                     return(<>
                         <div className="col-6 col-lg-3 col-md-3 col-sm-4 my-4">
                         <Link to={`/detail-movie/${data.imdbID}`}>
@@ -18,7 +18,10 @@ export default function CardComponent(movie){
                             </Link> {" "}<Outlet />
                         </div>
                     </>)
-                })}
+                }) : 
+                <div className="col-12">
+                    <h1 className="text-light text-center">Too many results, error from API</h1>
+                </div>}
             </div>
         </>
     )
