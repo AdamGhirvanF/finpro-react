@@ -123,7 +123,7 @@ export default function DetailMovieComponent() {
                 <div className="col-6 col-lg-3 col-md-3 col-sm-4 my-4">
                 <Link to={`/detail-movie/${data.imdbID}`}>
                         <div className="img-container overflow-hidden" style={{height: "200px"}}>
-                            <img src={data.Poster} className="card-img-top" alt="Img loading.."/>
+                            <img src={data.Poster} className="card-img-top" alt="Image not available"/>
                             <p className="image-title text-truncate">{data.Title}</p>
                             <p className="image-year">{data.Year}</p>
                         </div> 
