@@ -35,14 +35,11 @@ export default function NavbarComponent(){
     dispatch(getData(1));
   }
     return(
-      <nav class="navbar sticky-top navbar-dark bg-danger shadow-lg">
+      <nav class="navbar sticky-top navbar-dark bg-danger shadow-lg d-block">
         <div class="container-fluid">
           <Link class="navbar-brand h1 m-1" onClick={() => movePage()} to="/">Hacktivflix</Link>
           <div className="d-flex flex-grow-1 justify-content-end align-items-center">
             <ul className="navbar-nav d-flex flex-row align-items-center">
-              <li className="nav-item">
-                <Link className="nav-link" onClick={() => movePage()} to="/">Home</Link>
-              </li>
               <li className="nav-item ms-3"> {/* Adds margin between Home and search bar */}
                 <input
                   type="text"
