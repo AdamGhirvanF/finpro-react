@@ -1,8 +1,7 @@
-import { useSelector } from "react-redux"
 import { Link, Outlet } from "react-router-dom"
 
 export default function CardComponent(movie){
-    
+
     return(
         <>
             <div className="row">
@@ -20,7 +19,7 @@ export default function CardComponent(movie){
                     </>)
                 }) : 
                 <div className="col-12">
-                    <h1 className="text-light text-center">Too many results, error from API</h1>
+                    <h1 className="text-light text-center mt-4">Loading...</h1>
                 </div>}
             </div>
         </>
