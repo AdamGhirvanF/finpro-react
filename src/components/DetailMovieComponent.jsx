@@ -39,15 +39,13 @@ export default function DetailMovieComponent() {
           <div className="card bg-dark text-light p-4 border-0">
             {getMovieData.hasOwnProperty('Title') && ( // Check if data has Title property (data loaded)
               <div className="row">
-                {/* <div className=""> */}
                   <img
                     src={getMovieData.Poster}
-                    className="img-fluid h-50 text-center col-12 col-lg-4 col-md-5"
+                    className="img-fluid h-50 text-center col-12 col-lg-5 col-md-7"
                     alt="Img loading.."
                   />
-                {/* </div> */}
-                <div className="col-12 col-lg-8 col-md-7">
-                  <h2>{getMovieData.Title}</h2>
+                <div className="col-12 col-lg-7 col-md-5">
+                  <h2 className="mt-4">{getMovieData.Title}</h2>
                   <p>
                     {getMovieData.Year} | IMDB Rating {getMovieData.imdbRating} <span class="fa fa-star" style={{color: "orange"}}></span> | {getMovieData.Rated} | {getMovieData.Runtime}
                     <br />
@@ -71,23 +69,45 @@ export default function DetailMovieComponent() {
                     <b>Awards: </b> {getMovieData.Awards}
                   </p>
                     <br />
-                    <h4 className="mt-2">Ratings</h4>
-                    <table className="mt-4">
-                      <tr>
-                        {getMovieData.Ratings && getMovieData.Ratings.length > 0 ? ( // Check if Ratings exist and have elements
-                          getMovieData.Ratings.map((data) => (
-                            <>                      
-                              <td className="px-4 text-center"><b>{data.Value}</b><br/>{data.Source}</td>
-                            </>
-                          ))
-                        ) : (
-                          <td>No ratings available</td> // Handle empty ratings
-                        )}
-                      </tr> 
-                    </table>
+                    <div className="row col-12 d-md-none d-lg-block">
+                      <h4 className="mt-2">Other Ratings</h4>
+                      <table className="mt-4 mx-3 bg-danger" style={{borderRadius: "20px"}}>
+                        <tr>
+                          {getMovieData.Ratings && getMovieData.Ratings.length > 0 ? ( // Check if Ratings exist and have elements
+                            getMovieData.Ratings.map((data) => (
+                              <>                      
+                                <td className="p-4 mx-2 col-2 text-center">
+                                  <b>{data.Value}</b><span className="fa fa-star" style={{color: "orange"}}/>
+                                  <br/>{data.Source}</td>
+                              </>
+                            ))
+                          ) : (
+                            <td>No ratings available</td> // Handle empty ratings
+                          )}
+                        </tr> 
+                      </table>
+                    </div>
                 </div>
               </div>
             )}
+            <div className="row col-12 d-none d-md-block d-lg-none">
+              <h4 className="mt-4">Other Ratings</h4>
+              <table className="mt-4 mx-3 bg-danger" style={{borderRadius: "20px"}}>
+                <tr>
+                  {getMovieData.Ratings && getMovieData.Ratings.length > 0 ? ( // Check if Ratings exist and have elements
+                    getMovieData.Ratings.map((data) => (
+                      <>                      
+                        <td className="p-4 mx-2 col-2 text-center">
+                          <b>{data.Value}</b><span className="fa fa-star" style={{color: "orange"}}></span>
+                          <br/>{data.Source}</td>
+                      </>
+                    ))
+                  ) : (
+                    <td>No ratings available</td> // Handle empty ratings
+                  )}
+                </tr> 
+              </table>
+            </div>
           </div>
         </div>
       </div>
