@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate} from "react-router-dom";
-import { getData } from "../movies/action";
+import { getData } from "../movie/action";
 
 export default function NavbarComponent(){
   const dispatch = useDispatch();

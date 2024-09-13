@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet, useParams } from "react-router-dom";
-import { getData } from "../movies/action";
+import { getData } from "../movie/action";
 
 export default function DetailMovieComponent() {
   
