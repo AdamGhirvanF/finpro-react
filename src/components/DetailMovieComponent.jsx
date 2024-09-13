@@ -24,7 +24,7 @@ export default function DetailMovieComponent() {
 
   const getOneData = async () => {
     try {
-      const data = await fetch(`http://www.omdbapi.com/?i=${idMovie}&apikey=${process.env.REACT_APP_API_KEY}`);
+      const data = await fetch(`http://www.omdbapi.com/?i=${idMovie.id}&apikey=${process.env.REACT_APP_API_KEY}`);
       const result = await data.json();
       setMovieData(result);
     } catch (err) {
