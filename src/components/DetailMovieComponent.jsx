@@ -39,15 +39,14 @@ export default function DetailMovieComponent() {
           <div className="card bg-dark text-light p-4 border-0">
             {getMovieData.hasOwnProperty('Title') && ( // Check if data has Title property (data loaded)
               <div className="row">
-                <div className="col-12 col-lg-3 col-s-6">
+                {/* <div className=""> */}
                   <img
                     src={getMovieData.Poster}
-                    className="img-fluid text-center"
-                    style={{ width: "320px" }}
+                    className="img-fluid h-50 text-center col-12 col-lg-4 col-md-5"
                     alt="Img loading.."
                   />
-                </div>
-                <div className="col-12 col-lg-8 col-s-6">
+                {/* </div> */}
+                <div className="col-12 col-lg-8 col-md-7">
                   <h2>{getMovieData.Title}</h2>
                   <p>
                     {getMovieData.Year} | IMDB Rating {getMovieData.imdbRating} <span class="fa fa-star" style={{color: "orange"}}></span> | {getMovieData.Rated} | {getMovieData.Runtime}
@@ -93,6 +92,7 @@ export default function DetailMovieComponent() {
           </div>
         </div>
       </div>
+      <hr className="bg-light border-3 border-top border-light"/>
       <div className="row px-4">
         <h3 className="text-light">Similar Movie</h3>
         {movie.length > 0 ? movie.slice(similarIndex, similarIndex+4).map(function(data) {

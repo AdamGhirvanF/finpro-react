@@ -35,17 +35,25 @@ export default function NavbarComponent(){
     dispatch(getData(1));
   }
     return(
-      <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-danger shadow-lg">
+      <nav class="navbar sticky-top navbar-dark bg-danger shadow-lg">
         <div class="container-fluid">
           <Link class="navbar-brand h1 m-1" onClick={() => movePage()} to="/">Hacktivflix</Link>
-          <div class="navbar" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <Link class="nav-link" aria-current="page" onClick={() => movePage()} to="/">Home</Link>
+          <div className="d-flex flex-grow-1 justify-content-end align-items-center">
+            <ul className="navbar-nav d-flex flex-row align-items-center">
+              <li className="nav-item">
+                <Link className="nav-link" onClick={() => movePage()} to="/">Home</Link>
+              </li>
+              <li className="nav-item ms-3"> {/* Adds margin between Home and search bar */}
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search movie..."
+                  onBlur={(el) => searchNewMovie(el)}
+                  ref={inputRef}
+                />
               </li>
             </ul>
           </div>
-          <input type="text" className="form-control w-25" name="" onBlur={(el) => searchNewMovie(el)} placeholder="Search movie..." id="" ref={inputRef}/>
         </div>
       </nav>
     )

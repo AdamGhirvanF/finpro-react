@@ -54,7 +54,6 @@
 
 .img-container:hover img {
   transform: scale(1.2); /* Gambar membesar saat di-hover */
-  transform: translateY(-55%)
 }
 
 .pagination .page-link {
