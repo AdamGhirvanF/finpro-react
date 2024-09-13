@@ -72,13 +72,12 @@ export default function DetailMovieComponent() {
                   </p>
                     <br />
                     <h4 className="mt-2">Ratings</h4>
-                    <table>
+                    <table className="mt-4">
                       <tr>
                         {getMovieData.Ratings && getMovieData.Ratings.length > 0 ? ( // Check if Ratings exist and have elements
                           getMovieData.Ratings.map((data) => (
                             <>                      
-                              <th>{data.Source}</th>
-                              <td className="px-1">: {data.Value}</td>
+                              <td className="px-4 text-center"><b>{data.Value}</b><br/>{data.Source}</td>
                             </>
                           ))
                         ) : (
