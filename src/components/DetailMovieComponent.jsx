@@ -69,14 +69,14 @@ export default function DetailMovieComponent() {
                     <b>Awards: </b> {getMovieData.Awards}
                   </p>
                     <br />
-                    <div className="row col-12 d-md-none d-lg-block">
+                    <div className="row col-12 d-none d-md-none d-sm-none d-lg-block">
                       <h4 className="mt-2">Other Ratings</h4>
                       <table className="mt-4 mx-3 bg-danger" style={{borderRadius: "20px"}}>
                         <tr>
                           {getMovieData.Ratings && getMovieData.Ratings.length > 0 ? ( // Check if Ratings exist and have elements
                             getMovieData.Ratings.map((data) => (
                               <>                      
-                                <td className="p-4 mx-2 col-2 text-center">
+                                <td className="p-4 mx-2 col-4 text-center">
                                   <b>{data.Value}</b><span className="fa fa-star" style={{color: "orange"}}/>
                                   <br/>{data.Source}</td>
                               </>
@@ -90,14 +90,14 @@ export default function DetailMovieComponent() {
                 </div>
               </div>
             )}
-            <div className="row col-12 d-none d-md-block d-lg-none">
+            <div className="row col-12 d-none d-sm-none d-md-block d-lg-none">
               <h4 className="mt-4">Other Ratings</h4>
-              <table className="mt-4 mx-3 bg-danger" style={{borderRadius: "20px"}}>
+              <table className="mt-4 bg-danger" style={{borderRadius: "20px"}}>
                 <tr>
                   {getMovieData.Ratings && getMovieData.Ratings.length > 0 ? ( // Check if Ratings exist and have elements
                     getMovieData.Ratings.map((data) => (
                       <>                      
-                        <td className="p-4 mx-2 col-2 text-center">
+                        <td className="p-4 col-2 text-center">
                           <b>{data.Value}</b><span className="fa fa-star" style={{color: "orange"}}></span>
                           <br/>{data.Source}</td>
                       </>
@@ -106,6 +106,24 @@ export default function DetailMovieComponent() {
                     <td>No ratings available</td> // Handle empty ratings
                   )}
                 </tr> 
+              </table>
+            </div>
+            <div className="row col-12 d-block d-sm-block d-md-none d-lg-none">
+              <h4 className="mt-4">Other Ratings</h4>
+              <table className="mt-4 bg-danger" style={{borderRadius: "20px"}}>
+                  {getMovieData.Ratings && getMovieData.Ratings.length > 0 ? ( // Check if Ratings exist and have elements
+                    getMovieData.Ratings.map((data) => (
+                      <>                      
+                        <tr>
+                          <td className="p-2 mx-2 col-12 text-center">
+                            <b>{data.Value}</b><span className="fa fa-star" style={{color: "orange"}}/>
+                            <br/>{data.Source}</td>
+                        </tr>
+                      </>
+                    ))
+                  ) : (
+                    <td>No ratings available</td> // Handle empty ratings
+                  )}
               </table>
             </div>
           </div>

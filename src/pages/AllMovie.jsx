@@ -14,7 +14,7 @@ export default function AllMovie(){
     
     return(
         <>
-        <h2 className="text-light">Movie Reccomendation</h2>
+        <h2 className="text-light">Movie Recommendation</h2>
         <CardComponent movie={movie}/>
         <PaginationComponent />
         </>
