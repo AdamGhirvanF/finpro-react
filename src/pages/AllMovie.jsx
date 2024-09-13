@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CardComponent,PaginationComponent } from '../components';
-import { getData } from '../movie/action';
+import { getData } from '../movies/action';
 
 export default function AllMovie(){
     const {page, movie} = useSelector((state) => state);

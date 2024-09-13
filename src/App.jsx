@@ -1,6 +1,6 @@
 import './App.css';
-import { CardComponent,NavbarComponent,DetailMovieComponent, PaginationComponent,FooterComponent } from './components';
-import { AllMovie, OneMovie } from './pages';
+import { NavbarComponent,DetailMovieComponent,FooterComponent } from './components';
+import { AllMovie } from './pages';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
