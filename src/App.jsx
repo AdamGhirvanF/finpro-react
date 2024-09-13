@@ -1,6 +1,6 @@
 import './App.css';
 import { NavbarComponent,DetailMovieComponent,FooterComponent } from './components';
-import { AllMovie } from './pages';
+import { AllMovie, OneMovie } from './pages';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AllMovie/>}/>
           <Route path="/:page" element={<AllMovie/>}/>
-          <Route path='/detail-movie/:id' element={<DetailMovieComponent/>}/>
+          <Route path='/detail-movie/:id' element={<OneMovie/>}/>
         </Routes>
       </div>
     </body>

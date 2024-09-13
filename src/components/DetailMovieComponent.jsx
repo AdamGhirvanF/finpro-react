@@ -5,32 +5,18 @@ import { getData } from "../movies/action";
 
 export default function DetailMovieComponent() {
   
-  let idMovie = useParams(); 
   const dispatch = useDispatch();
-  const {movie,page} = useSelector((state) => state);
-
+  const {movie,page,singleMovie} = useSelector((state) => state);
+  const getMovieData = singleMovie;
+  
   let similarIndex = Math.floor(1 + Math.random() * (20 - 1));
   if(similarIndex > 16){
     similarIndex = 16;
   }
-  
-  const [getMovieData, setMovieData] = useState({}); 
-  
 
   useEffect(() => {
-    getOneData();
     dispatch(getData(page));
-  }, [idMovie]); 
-
-  const getOneData = async () => {
-    try {
-      const data = await fetch(`https://www.omdbapi.com/?i=${idMovie.id}&apikey=${process.env.REACT_APP_API_KEY}`);
-      const result = await data.json();
-      setMovieData(result);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  }, []); 
 
   return (
     <>

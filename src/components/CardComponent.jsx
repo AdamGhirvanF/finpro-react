@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux"
 import { Link, Outlet } from "react-router-dom"
 
-export default function CardComponent(movie){
-
+export default function CardComponent(){
+    const movie = useSelector((state) => state)
+    
     return(
         <>
             <div className="row">

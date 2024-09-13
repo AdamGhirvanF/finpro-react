@@ -36,7 +36,7 @@ export function getData(page) {
 export function getOneData(idMovie){
   return async function (dispatch) {
     try {
-      const data = await fetch(`https://www.omdbapi.com/?i=${idMovie.id}&apikey=${process.env.REACT_APP_API_KEY}`);
+      const data = await fetch(`https://www.omdbapi.com/?i=${idMovie}&apikey=${process.env.REACT_APP_API_KEY}`);
       const result = await data.json();
       
       dispatch({

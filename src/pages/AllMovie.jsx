@@ -4,7 +4,7 @@ import { CardComponent,PaginationComponent } from '../components';
 import { getData } from '../movies/action';
 
 export default function AllMovie(){
-    const {page, movie} = useSelector((state) => state);
+    const {page} = useSelector((state) => state);
     
     const dispatch = useDispatch();
     
@@ -15,7 +15,7 @@ export default function AllMovie(){
     return(
         <>
         <h2 className="text-light">Movie Recommendation</h2>
-        <CardComponent movie={movie}/>
+        <CardComponent/>
         <PaginationComponent />
         </>
     )
